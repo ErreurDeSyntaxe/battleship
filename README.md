@@ -168,14 +168,14 @@ class Gameboard {
 }
 
 class Ship {
-  constructor(shipName, shipLenght, currentHits, isSunk) {
+  constructor(shipName, shipLength, hits) {
     this.shipName = shipName;
     this.shipLength = shipLength;
-    this.currentHits = currentHits;
+    this.hits = hits;
     this.isSunk = isSunk;
   }
 
   hit() {}
-  checkIsSunk() {}
+  isSunk() {}
 }
 ```
