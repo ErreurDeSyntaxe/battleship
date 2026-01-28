@@ -1,14 +1,14 @@
-const shipNames = [
-  'Carrier',
-  'Battleship',
-  'Submarine',
-  'Destroyer',
-  'Patrol Boat',
+const SHIPS = [
+  { name: 'Patrol Boat', size: 1 },
+  { name: 'Destroyer', size: 2 },
+  { name: 'Submarine', size: 3 },
+  { name: 'Battleship', size: 4 },
+  { name: 'Carrier', size: 5 },
 ];
 
-export class Ship {
+class Ship {
   constructor(shipName, shipLength, hits = 0) {
-    if (!shipNames.includes(shipName)) {
+    if (!SHIPS.find((ship) => ship.name === shipName)) {
       throw new Error('Invalid ship name');
     }
     if (shipLength <= 0 || shipLength > 5 || typeof shipLength !== 'number') {
@@ -28,3 +28,5 @@ export class Ship {
     return this.hits >= this.shipLength;
   }
 }
+
+export { Ship, SHIPS };
