@@ -19,11 +19,26 @@ export class Gameboard {
   }
 
   buildBoard(size) {
-    return Array.from({ length: size }, () =>
-      Array.from({ length: size }, () => {
-        return { ship: null, attacked: false };
-      }),
-    );
+    const board = [];
+
+    for (let i = 0; i < size; i++) {
+      board[i] = [];
+      for (let j = 0; j < size; j++) {
+        board[i][j] = {
+          ship: null,
+          attacked: false,
+          coords: { y: String.fromCharCode(i + 97), x: j },
+        };
+      }
+    }
+
+    return board;
+
+    // return Array.from({ length: size }, () =>
+    //   Array.from({ length: size }, () => {
+    //     return { ship: null, attacked: false };
+    //   }),
+    // );
   }
 
   createShips() {
@@ -88,6 +103,6 @@ export class Gameboard {
       target.hit();
     }
 
-    return this.board[y][x];
+    return [y, x, this.board[y][x]];
   }
 }
