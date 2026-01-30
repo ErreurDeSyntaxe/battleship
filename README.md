@@ -30,6 +30,7 @@ This project’s goal is to **learn TDD by building a game**.
 
 <p align="left">
   <img src="./README/html-logo.svg" alt="HTML Logo" width="40" height="40">
+  <img src="./README/css-logo.svg" alt="CSS Logo" width="40" height="40">
   <img src="./README/js-logo.svg" alt="JavaScript Logo" width="40" height="40">
   <img src="./README/vitest-logo.svg" alt="Vitest Logo" width="40" height="40">
 </p>
@@ -56,31 +57,23 @@ This section serves as both a checklist and roadmap.
 - [x] Features
 - [x] Flowchart
 - [x] Architecture
-<!-- - [ ] UI Design / Sketch -->
+- [x] UI Design / Sketch
 
 #### 💻 Development Steps
 
-<!-- - [ ] **Basic HTML**
-  - [ ] Title & Meta
-  - [ ] Structure
-  - [ ] Favicons -->
+- [x] **Basic HTML**
+  - [x] Title & Meta
+  - [x] Structure
+  - [x] Favicons
 
-- [ ] **Vitest Setup**
-  - [ ] Install Vitest (`npm i vitest -D`)
-  - [ ] Add `"test": "vitest --run --reporter verbose"` and `"test:watch": "vitest"` scripts
-- [ ] **Logic & UI**
-  - [ ] Console-based logic
-  - [ ] Refined UI & layout
-  - [ ] Menu / Navigation
+- [x] **Dev Setup**
+  - [x] Install Vitest (`npm i vitest -D`)
 
-  <!-- - [ ] **Responsive Design**
-  - [ ] Responsive images (Art direction)
-  - [ ] Media queries
-  - [ ] Mobile menu -->
-  <!-- - [ ] **Accessibility & Optimization**
-  - [ ] Check accessibility
-  - [ ] Optimize images
-  - [ ] Run Lighthouse -->
+- [x] **Logic**
+  - [x] Console-based logic
+
+- [x] **UI**
+  - [x] Basic UI
 
 #### 🚀 Deployment (Git + GitHub Pages)
 
@@ -140,42 +133,17 @@ Page loads → User opens console → User starts game
 
 ```js
 class App {
-  constructor(players = [], board) {
-    this.players = players;
-    this.board = board;
-  }
-
-  run() {
-    console.log('Starting App...\n');
-  }
+  this.players = [new Player(), new Player()];
 }
 
 class Player {
-  constructor(type = 'player', board) {
-    this.type = type;
-    this.board = board;
-  }
+  this.board = new Gameboard();
 }
 
 class Gameboard {
-  constructor(size = 8, ships = [], attacks = []) {
-    this.size = size;
-    this.ships = ships;
-  }
-
-  receiveAttack(x, y) {}
-  checkAllSunk() {}
+  this.ships = [new Ship(), new Ship(), new Ship()];
 }
 
 class Ship {
-  constructor(shipName, shipLength, hits) {
-    this.shipName = shipName;
-    this.shipLength = shipLength;
-    this.hits = hits;
-    this.isSunk = isSunk;
-  }
-
-  hit() {}
-  isSunk() {}
 }
 ```
