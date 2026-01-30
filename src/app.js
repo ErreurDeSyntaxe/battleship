@@ -17,7 +17,6 @@ class App {
     if (this.turn) this.attackRandomly();
   }
 
-  // TODO: Disable play when game is over
   isGameOver() {
     const loser =
       (this.players[0].board.isGameOver() && 'playerOne') ||
@@ -39,7 +38,6 @@ class App {
   attack(y, x) {
     if (this.isGameOver()) return;
 
-    console.log(`${this.turn === 0 ? 'human' : 'computer'}: `, y, x);
     const target = this.turn === 0 ? 1 : 0;
     try {
       const attackArr = this.players[target].board.receiveAttack(y, x);
