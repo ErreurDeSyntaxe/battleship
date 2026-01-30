@@ -14,7 +14,7 @@ An browser console implementation of Battleship built through the TDD approach.
 
 ### 🌐 Live Demo
 
-[Visit Project](http://google.com/)
+[Visit Project](http://erreurdesyntaxe.githut.io/battleship/)
 
 ### 🎯 Objective
 
